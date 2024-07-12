@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/venes/OneDrive/Desktop/projects/python project/my library/lib.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1836"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainbooks"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE members (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    membership_date DATE
+);
+
+CREATE TABLE transactions (
+    id INTEGER PRIMARY KEY,
+    book_id INTEGER,
+    member_id INTEGER,
+    borrow_date DATE,
+    return_date DATE,
+    FOREIGN KEY(book_id) REFERENCES books(id),
+    FOREIGN KEY(member_id) REFERENCES members(id)
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
